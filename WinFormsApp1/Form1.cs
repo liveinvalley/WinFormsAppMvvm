@@ -12,8 +12,11 @@ namespace WinFormsApp1
             _viewModel = new MainViewModel();
 
             textBoxFirstName.DataBindings.Add(nameof(textBoxFirstName.Text), _viewModel, nameof(_viewModel.FirstName));
+            textBoxFirstName.AccessibleName = nameof(textBoxFirstName);
             textBoxLastName.DataBindings.Add(nameof(textBoxLastName.Text), _viewModel, nameof(_viewModel.LastName));
+            textBoxLastName.AccessibleName = nameof(textBoxLastName);
             labelFullName.DataBindings.Add(nameof(labelFullName.Text), _viewModel, nameof(_viewModel.FullName));
+            labelFullName.AccessibleName = nameof(labelFullName);
             buttonResetName.Command = _viewModel.ResetNameCommand;
 
             var lb = label1.DataBindings.Add(nameof(label1.Text), _viewModel, nameof(_viewModel.CurrentState));
